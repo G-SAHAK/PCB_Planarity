@@ -1,12 +1,6 @@
-# PCB Planarity Solver
+# Graph Planarity Solver
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-This repository contains a C++ implementation of PCB (Printed Circuit Board) planarity analysis algorithms. The tool decomposes a non-planar graph into multiple planar subgraphs, which is particularly useful for PCB design applications where minimizing the number of layers is critical.
-
-## Overview
-
-PCB routing often involves dealing with non-planar graphs. This tool takes a non-planar graph as input and partitions it into multiple planar subgraphs (layers), each of which can be manufactured as a separate layer in a PCB. The goal is to minimize the number of layers while ensuring each layer is planar.
+This repository contains a C++ implementation of Graph planarity analysis algorithms.
 
 ## Algorithms
 
@@ -71,12 +65,6 @@ For each planar layer identified, the program generates a GraphML file. Each fil
 - Execution time
 - Peak memory usage
 
-## Performance Considerations
-
-- The **C+** algorithm generally offers good performance for medium-sized graphs
-- The **BM** algorithm is faster but may produce more layers
-- The **Exact** algorithm guarantees an optimal solution but might be too slow for large graphs
-
 ## Example Output
 
 ```
@@ -96,45 +84,3 @@ The tool works by:
 3. Saving this subgraph as a separate layer
 4. Removing the extracted edges from the original graph
 5. Repeating until the original graph has no more edges
-
-## License
-
-This project is licensed under the MIT License - see below for details:
-
-```
-MIT License
-
-Copyright (c) 2025 Sahak Gulakyan
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-## Citation
-
-If you use this tool in your research or academic work, please cite:
-
-```
-@software{gulakyan2025pcbplanarity,
-  author = {Gulakyan, Sahak},
-  title = {PCB Planarity: A Tool for Decomposing Non-Planar Graphs into Planar Subgraphs},
-  year = {2025},
-  url = {https://github.com/G-SAHAK/PCB_Planarity},
-  note = {Part of Master's Thesis}
-}
-```
